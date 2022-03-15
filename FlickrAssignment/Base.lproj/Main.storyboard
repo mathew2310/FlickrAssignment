@@ -17,8 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jkw-3O-tNN">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="svm-Jc-ChQ"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-ja-K5z">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="199" width="414" height="658"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BvQ-1X-ixg">
                                     <size key="itemSize" width="128" height="202"/>
@@ -34,11 +41,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="202"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TtL-X4-u6d">
-                                                    <rect key="frame" x="-56" y="8" width="240" height="194"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TtL-X4-u6d">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="202"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="TtL-X4-u6d" firstAttribute="top" secondItem="bdM-vu-WC8" secondAttribute="top" id="0if-Y3-Q5B"/>
+                                                <constraint firstAttribute="bottom" secondItem="TtL-X4-u6d" secondAttribute="bottom" id="MWj-2p-Wnq"/>
+                                                <constraint firstItem="TtL-X4-u6d" firstAttribute="leading" secondItem="bdM-vu-WC8" secondAttribute="leading" id="dA1-5d-zJQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="TtL-X4-u6d" secondAttribute="trailing" id="jtj-Fl-nFl"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="128" height="202"/>
                                         <connections>
@@ -51,26 +63,22 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="S7l-ja-K5z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Zc6-Hs-T70"/>
+                            <constraint firstItem="jkw-3O-tNN" firstAttribute="height" secondItem="S7l-ja-K5z" secondAttribute="height" multiplier="0.0775194" id="Sqn-7X-f4P"/>
+                            <constraint firstItem="jkw-3O-tNN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XEc-8N-ctQ"/>
                             <constraint firstItem="S7l-ja-K5z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ast-Sy-VuW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S7l-ja-K5z" secondAttribute="trailing" id="hDz-da-cFf"/>
+                            <constraint firstItem="jkw-3O-tNN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hpN-qm-mqR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S7l-ja-K5z" secondAttribute="bottom" id="lBa-oe-PLD"/>
+                            <constraint firstItem="jkw-3O-tNN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="q5n-BC-PFP"/>
+                            <constraint firstItem="S7l-ja-K5z" firstAttribute="top" secondItem="jkw-3O-tNN" secondAttribute="bottom" constant="60" id="tbl-hR-j28"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6sV-Y6-sdE">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search              " textAlignment="natural" minimumFontSize="17" id="gY6-Oz-Y3O">
-                            <rect key="frame" x="144" y="5" width="126" height="34"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
-                            <connections>
-                                <outlet property="delegate" destination="BYZ-38-t0r" id="muD-o7-0ft"/>
-                            </connections>
-                        </textField>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="S7l-ja-K5z" id="KFm-rA-q3i"/>
+                        <outlet property="searchBar" destination="jkw-3O-tNN" id="F2h-9b-all"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

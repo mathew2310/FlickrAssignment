@@ -31,9 +31,6 @@ extension UIImageView {
             
         }
         
-        
-       
-        
         datatTask.resume()
         
     }

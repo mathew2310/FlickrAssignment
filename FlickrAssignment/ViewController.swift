@@ -7,35 +7,37 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var searchBar: UISearchBar!
     
-
-   
     var networkManager : flickrNetworkClass!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchBar.delegate = self
+
         collectionView.dataSource = self
         //networkManager(ViewController: self)
         networkManager = flickrNetworkClass(viewController: self)
         
 
-        networkManager.getImage()
+       
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
-    
-    
-    
 
-
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            searchBar.resignFirstResponder()
+            if let text = searchBar.text {
+                networkManager.getImage(search: text)
+            }
+        }
 }
 
 extension ViewController: UICollectionViewDataSource {
@@ -64,9 +66,6 @@ extension ViewController: UICollectionViewDataSource {
         
         return flickrCell
     }
-    
-    
-    
     
 }
 
