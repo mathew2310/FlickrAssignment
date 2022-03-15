@@ -10,7 +10,7 @@ import Foundation
 
 protocol flickrNetwork {
     
-    func getImage()
+    func getImage(search: String )
 }
 
 class flickrNetworkClass: flickrNetwork {    
@@ -21,10 +21,10 @@ class flickrNetworkClass: flickrNetwork {
     }
     
     var data: [Photo] = []
-    func getImage() {
+    func getImage(search: String ) {
         
         
-        let urlstr = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=0e08e76eff544231b992197c7c7c22a9&text=cat&format=json&nojsoncallback=1"
+        let urlstr = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=0e08e76eff544231b992197c7c7c22a9&text=\(search)&format=json&nojsoncallback=1"
         
         let url = URL(string: urlstr)
         
