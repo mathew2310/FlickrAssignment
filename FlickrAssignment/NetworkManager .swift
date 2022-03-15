@@ -10,16 +10,13 @@ import Foundation
 
 protocol flickrNetwork {
     
+    
     func getImage(search: String)
 }
 
-class flickrNetworkClass: flickrNetwork {    
+class flickrNetworkClass: flickrNetwork {
     
-    weak var viewController : Result?
-    init(viewController: Result) {
-        self.viewController = viewController
-    }
-    
+    weak var delegate: FlickrModelType?
     var data: [Photo] = []
     func getImage(search: String) {
         
@@ -43,7 +40,7 @@ class flickrNetworkClass: flickrNetwork {
                 self.data = decodedResponce.photos.photo
                print("data")
                 
-                self.viewController?.getFinalResult()
+                self.delegate?.updateImageResponce(responce: decodedResponce)
             
             }catch{
                 print(error.localizedDescription)

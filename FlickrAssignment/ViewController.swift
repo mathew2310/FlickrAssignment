@@ -12,17 +12,18 @@ class ViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var searchBar: UISearchBar!
+    var viewModel: FlickrViewModel!
+   
     
-    var networkManager : flickrNetworkClass!
+   // var networkManager : flickrNetworkClass!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        searchBar.delegate = self
+            searchBar.delegate = self
 
         collectionView.dataSource = self
-        //networkManager(ViewController: self)
-        networkManager = flickrNetworkClass(viewController: self)
+        viewModel = FlickrViewModel(delegate: self)
+        viewModel.delegate = self
         
 
        
@@ -35,7 +36,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
             searchBar.resignFirstResponder()
             if let text = searchBar.text {
-                networkManager.getImage(search: text)
+                viewModel.getImage(search: text)
             }
         }
 }
@@ -43,14 +44,14 @@ class ViewController: UIViewController, UISearchBarDelegate {
 extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return networkManager.data.count
+        return viewModel.data.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let flickrCell = collectionView.dequeueReusableCell(withReuseIdentifier: "FlickrCell", for: indexPath) as! FlickrViewCell
-        let user = networkManager.data[indexPath.row]
+       let user = viewModel.data[indexPath.row]
         
         let farmValue = user.farm
         let server = user.server
