@@ -11,4 +11,6 @@ class FlickrViewCell: UICollectionViewCell {
     
     @IBOutlet weak var flickrImage: UIImageView!
     
+    
+    
 }
