@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841F062127E38A5A00BCBEF2 /* ViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F062027E38A5A00BCBEF2 /* ViewModelTest.swift */; };
 		8473853527DB6C08006E1831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473853427DB6C08006E1831 /* AppDelegate.swift */; };
 		8473853727DB6C08006E1831 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473853627DB6C08006E1831 /* SceneDelegate.swift */; };
 		8473853927DB6C08006E1831 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473853827DB6C08006E1831 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		841F062027E38A5A00BCBEF2 /* ViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTest.swift; sourceTree = "<group>"; };
 		8473853127DB6C08006E1831 /* FlickrAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8473853427DB6C08006E1831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8473853627DB6C08006E1831 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				8473854B27DB6C09006E1831 /* FlickrAssignmentTests.swift */,
+				841F062027E38A5A00BCBEF2 /* ViewModelTest.swift */,
 			);
 			path = FlickrAssignmentTests;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841F062127E38A5A00BCBEF2 /* ViewModelTest.swift in Sources */,
 				8473854C27DB6C09006E1831 /* FlickrAssignmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
