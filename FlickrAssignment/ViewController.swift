@@ -10,10 +10,9 @@ import UIKit
 class ViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var searchBar: UISearchBar!
+    
     var viewModel: FlickrViewModel!
-   
     
    // var networkManager : flickrNetworkClass!
     

@@ -12,18 +12,18 @@ protocol FlickrModelType: AnyObject {
 }
 
 class FlickrViewModel: FlickrModelType {
-    
     weak var delegate: Result?
+    var networkManager: flickrNetwork = NetworkManager()
     init(delegate: Result){
         self.delegate = delegate
     }
     
     
-    let networkManager = flickrNetworkClass()
+    //let networkManager = flickrNetworkClass()
     var data: [Photo] = []
+    
     func getImage(search: String) {
-        
-        networkManager.delegate = self
+        networkManager.delegateViewModel = self
         networkManager.getImage(search: search)
         }
     

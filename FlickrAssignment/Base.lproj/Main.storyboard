@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jkw-3O-tNN">
-                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="55.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="svm-Jc-ChQ"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-ja-K5z">
-                                <rect key="frame" x="0.0" y="199" width="414" height="658"/>
+                                <rect key="frame" x="0.0" y="143.5" width="414" height="718.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BvQ-1X-ixg">
                                     <size key="itemSize" width="128" height="202"/>
@@ -63,6 +63,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="S7l-ja-K5z" firstAttribute="firstBaseline" secondItem="jkw-3O-tNN" secondAttribute="baseline" symbolType="layoutAnchor" id="6If-d1-DWo"/>
                             <constraint firstItem="jkw-3O-tNN" firstAttribute="height" secondItem="S7l-ja-K5z" secondAttribute="height" multiplier="0.0775194" id="Sqn-7X-f4P"/>
                             <constraint firstItem="jkw-3O-tNN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XEc-8N-ctQ"/>
                             <constraint firstItem="S7l-ja-K5z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ast-Sy-VuW"/>
